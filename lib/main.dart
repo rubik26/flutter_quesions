@@ -7,7 +7,7 @@ void main() {
   runApp(
     MaterialApp(debugShowCheckedModeBanner: false, initialRoute: '/', routes: {
       '/': (context) => const GradientColor(colorList: colorList),
-      '/exam': (context) => Quesions()
+      '/exam': (context) => const Quesions()
     }),
   );
 }
