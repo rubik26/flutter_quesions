@@ -6,12 +6,26 @@ class Quesions extends StatefulWidget {
   const Quesions({super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return QuesionsState();
-  }
+  State<StatefulWidget> createState() => _QuesionsState();
 }
 
-class QuesionsState extends State {
+class _QuesionsState extends State {
+  String quesions = "Loading Quesions...";
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  void fetchData() {
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        quesions = "Quesions loaded!";
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const AlignmentGeometry startAlignment = Alignment.topLeft;
@@ -20,15 +34,18 @@ class QuesionsState extends State {
         body: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-            colors: colorList, begin: startAlignment, end: endAlignment),
+          colors: colorList,
+          begin: startAlignment,
+          end: endAlignment,
+        ),
       ),
-      child: const Center(
+      child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Quesions...",
-              style: TextStyle(color: Colors.white, fontSize: 30),
+              quesions,
+              style: const TextStyle(color: Colors.white, fontSize: 30),
             ),
           ],
         ),
