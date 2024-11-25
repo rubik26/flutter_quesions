@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quesions/background_color.dart';
-import 'package:flutter_quesions/exam.dart';
-import 'package:flutter_quesions/result.dart';
 
-void main() {
-  const colorList = [Colors.purple, Colors.purpleAccent];
-  runApp(
-    MaterialApp(debugShowCheckedModeBanner: false, initialRoute: '/', routes: {
-      '/': (context) => const GradientColor(colorList: colorList),
-      '/exam': (context) => const Questions(),
-      '/result': (context) => const ResultsScreen(),
-    }),
-  );
+class ResultsScreen extends StatelessWidget {
+  const ResultsScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    final selectedAnswers =
+        ModalRoute.of(context)?.settings.arguments as List<String>;
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Your Answers:',
+              style: TextStyle(fontSize: 24),
+            ),
+            ...selectedAnswers.map(
+              (answer) => Text(
+                answer,
+                style: const TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
