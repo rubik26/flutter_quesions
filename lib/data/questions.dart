@@ -1,17 +1,20 @@
 import 'package:flutter_quesions/models/quiz_questions.dart';
 
 const questions = [
-  QuizQuestions("What is Flutter", [
-    "A web development framework",
-    "A game development engine",
-    "A UI toolkit for building natively compiled apps",
-    "A database management system",
-  ]),
+  QuizQuestions(
+    "What is Flutter",
+    [
+      "A UI toolkit for building natively compiled apps",
+      "A web development framework",
+      "A game development engine",
+      "A database management system",
+    ],
+  ),
   QuizQuestions(
     "Which programming language is used to write Flutter apps?",
     [
-      "Python",
       "Dart",
+      "Python",
       "JavaScript",
       "Kotlin",
     ],
@@ -19,17 +22,17 @@ const questions = [
   QuizQuestions(
     "What widget is commonly used to define the main structure of a Flutter app?",
     [
+      "Scaffold",
       "Container",
       "Column",
-      "Scaffold",
       "Row",
     ],
   ),
   QuizQuestions(
     "What is the purpose of the pubspec.yaml file in a Flutter project?",
     [
-      "To store app images",
       "To define dependencies and metadata",
+      "To store app images",
       "To write app's main code",
       "To specify app colors"
     ],
