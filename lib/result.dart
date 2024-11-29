@@ -39,8 +39,7 @@ class ResultsScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.spaceBetween, // Распределение пространства
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
